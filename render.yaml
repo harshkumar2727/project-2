@@ -1,0 +1,40 @@
+# render.yaml
+# This file tells Render how to deploy the Data Analyst Agent service.
+
+services:
+  # A Web Service for the FastAPI application
+  - type: web
+    name: tds-data-analyst-agent
+    # Use the Docker environment for deployment
+    env: docker
+    # Optional: Render can automatically assign a health check path.
+    # The /api endpoint is a good choice as it confirms the app is running.
+    healthCheckPath: /api
+    # Environment variables.
+    # IMPORTANT: Set the actual values for these keys in the Render dashboard.
+    # Do NOT put your secret keys directly in this file.
+    envVars:
+      - key: LLM_TIMEOUT_SECONDS
+        value: 240
+      # Add placeholders for all your Gemini keys.
+      # You will fill these in securely in the Render UI.
+      - key: gemini_api_1
+        sync: false
+      - key: gemini_api_2
+        sync: false
+      - key: gemini_api_3
+        sync: false
+      - key: gemini_api_4
+        sync: false
+      - key: gemini_api_5
+        sync: false
+      - key: gemini_api_6
+        sync: false
+      - key: gemini_api_7
+        sync: false
+      - key: gemini_api_8
+        sync: false
+      - key: gemini_api_9
+        sync: false
+      - key: gemini_api_10
+        sync: false
